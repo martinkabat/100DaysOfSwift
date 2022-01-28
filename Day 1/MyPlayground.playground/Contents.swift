@@ -39,3 +39,5 @@ var name: String = "Martin" // <- explicit type (the opposite of the type infere
 var size: Int = 24
 var height: Double = 182.5
 var married: Bool = true
+
+//test Git
