@@ -77,3 +77,37 @@ while countDown >= 0 {
         break
     }
 }
+
+// (5) Exiting multiple loops
+// it is possible to add label to the loop like this 'whateverName:' before loop and then break the multiple loop from the inner loop by naming what we are breaking from
+outerLoop: for i in 1...10 {
+    for j in 1...10 {
+        let product = i * j
+        print ("\(i) * \(j) is \(product)")
+
+        if product == 50 {
+            print("It's a bullseye!")
+            break outerLoop
+        }
+    }
+}
+
+// (6) Skipping items
+for i in 1...10 {
+    if i % 2 == 1 {
+        continue
+    }
+    print(i)
+}
+
+// (7) Infinite loops
+var counter = 0
+
+while true {
+    print(" ")
+    counter += 1
+    
+    if counter == 273 {
+        break
+    }
+}
