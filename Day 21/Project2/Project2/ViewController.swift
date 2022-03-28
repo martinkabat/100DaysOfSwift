@@ -27,10 +27,13 @@ class ViewController: UIViewController {
 //        countries.append(contentsOf: "estonia")
 //        countries.append(contentsOf: "france")
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showCurrentScore))
+        
         countries += ["estonia", "france", "germany",
                       "ireland", "italy", "monaco",
                       "nigeria", "poland", "russia",
                       "spain", "uk", "us"]
+        
         button1.layer.borderWidth = 1
         button2.layer.borderWidth = 1
         button3.layer.borderWidth = 1
@@ -78,6 +81,12 @@ class ViewController: UIViewController {
             ac.addAction(UIAlertAction(title: "Start over", style: .default, handler: askQuestion))
             present(ac, animated: true)
         }
+    }
+    
+    @objc func showCurrentScore() {
+        let ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: askQuestion))
+        present(ac, animated: true)
     }
     
 }

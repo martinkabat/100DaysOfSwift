@@ -17,8 +17,6 @@ class ViewController: UITableViewController {
         title = "Storm Viewer"
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(recommendApp))
-        
         let fm = FileManager.default // load file manager
         let path = Bundle.main.resourcePath! // force unwrap main resource path of the main bundle (it always exists)
         let items = try! fm.contentsOfDirectory(atPath: path) // get all the items from this paths
@@ -58,12 +56,6 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
-    }
-    
-    @objc func recommendApp() {
-        let vc = UIActivityViewController(activityItems: ["Recommend this app to your friends!"], applicationActivities: [])
-        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
-        present(vc, animated: true)
     }
 }
 
