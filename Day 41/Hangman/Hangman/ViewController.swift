@@ -165,10 +165,6 @@ class ViewController: UIViewController {
             }
         }
         
-//        var questionMarkOccurences: Int {
-//            promptWord.filter( $0 == "?" ).count
-//        }
-        
         if questionMarkOccurences == 0 {
             let ac = UIAlertController(title: "You won", message: "You guessed the word!", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "New game", style: .default, handler: {action in
@@ -188,7 +184,7 @@ class ViewController: UIViewController {
                 var lines = levelContents.components(separatedBy: "\n")
                 lines.shuffle()
                 
-                var line = lines.first // Pick first line
+                let line = lines.first // Pick first line
                 let parts = line!.components(separatedBy: ": ")
                 rightAnswer = parts[0]
                 hintString = parts[1]
