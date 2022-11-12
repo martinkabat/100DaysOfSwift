@@ -1,0 +1,40 @@
+{
+    "countries": [
+        {
+            "name": "Czech Republic",
+            "capital": "Prague",
+            "size": 78865.0,
+            "population": 10698896,
+            "language": ["Czech"],
+            "visited": true,
+            "flag": "https://flagcdn.com/w320/cz.png"
+        },
+        {
+            "name": "Portugal",
+            "capital": "Lisbon",
+            "size": 92090.0,
+            "population": 10305564,
+            "language": ["Portuguese"],
+            "visited": true,
+            "flag": "https://flagcdn.com/w320/pt.png"
+        },
+        {
+            "name": "Ukraine",
+            "capital": "Kyiv",
+            "size": 603500.0,
+            "population": 44134693,
+            "language": ["Ukranian", "Russian"],
+            "visited": false,
+            "flag": "https://flagcdn.com/w320/ua.png"
+        },
+        {
+            "name": "Croatia",
+            "capital": "Zagreb",
+            "size": 56594.0,
+            "population": 4047200,
+            "language": ["Croatian"],
+            "visited": true,
+            "flag": "https://flagcdn.com/w320/hr.png"
+        }
+    ]
+}
