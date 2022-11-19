@@ -19,13 +19,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var enemyCount = 0 {
         didSet {
             enemyLabel.text = "Enemies: \(enemyCount)"
-            if enemyCount > 20 {
+            if enemyCount > 20 && enemyCount < 40 {
+                gameTimer?.invalidate()
+                gameTimer = Timer.scheduledTimer(timeInterval: 0.75, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+            } else if enemyCount > 40 && enemyCount < 60  {
+                gameTimer?.invalidate()
+                gameTimer = Timer.scheduledTimer(timeInterval: 0.65, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+            } else if enemyCount > 60 && enemyCount < 80  {
+                gameTimer?.invalidate()
+                gameTimer = Timer.scheduledTimer(timeInterval: 0.55, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+            } else if enemyCount > 80 && enemyCount < 100  {
+                gameTimer?.invalidate()
+                gameTimer = Timer.scheduledTimer(timeInterval: 0.45, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+            } else if enemyCount > 100 && enemyCount < 120  {
+                gameTimer?.invalidate()
+                gameTimer = Timer.scheduledTimer(timeInterval: 0.35, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+            } else if enemyCount > 120 && enemyCount < 140  {
                 gameTimer?.invalidate()
                 gameTimer = Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
-            } else if enemyCount > 40 {
+            }  else if enemyCount > 140 && enemyCount < 160  {
                 gameTimer?.invalidate()
                 gameTimer = Timer.scheduledTimer(timeInterval: 0.15, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
-            } else if enemyCount > 60 {
+            } else if enemyCount > 160 {
                 gameTimer?.invalidate()
                 gameTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
             }
@@ -93,7 +108,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.gravity = .zero
         physicsWorld.contactDelegate = self
         
-        gameTimer = Timer.scheduledTimer(timeInterval: 0.35, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+        gameTimer = Timer.scheduledTimer(timeInterval: 0.85, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
     }
     
     @objc func createEnemy() {
@@ -154,7 +169,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         score = 0
         enemyCount = 0
         isGameOver = false
-        gameTimer = Timer.scheduledTimer(timeInterval: 0.35, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+        gameTimer = Timer.scheduledTimer(timeInterval: 0.85, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
